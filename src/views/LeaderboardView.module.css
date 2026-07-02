@@ -47,3 +47,7 @@
   color: var(--accent);
   font-weight: 700;
 }
+
+.empty {
+  color: rgba(255, 255, 255, 0.5);
+}
