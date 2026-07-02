@@ -7,7 +7,7 @@ function App() {
   const [view, setView] = useState('menu')
 
   if (view === 'game') {
-    return <GameView />
+    return <GameView onBack={() => setView('menu')} />
   }
 
   if (view === 'leaderboard') {

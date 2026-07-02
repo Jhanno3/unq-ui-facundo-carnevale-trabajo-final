@@ -32,3 +32,60 @@
   background: var(--accent);
   color: #fff;
 }
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.dialog {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 320px;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #12142a;
+}
+
+.dialog h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.dialog input {
+  font-size: 16px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  color: inherit;
+}
+
+.dialog input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.dialog input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: -1px;
+}
+
+.dialog button {
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}

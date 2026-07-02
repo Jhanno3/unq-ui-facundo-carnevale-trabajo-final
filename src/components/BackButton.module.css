@@ -1,0 +1,21 @@
+.backButton {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 15;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+  color: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.backButton:hover {
+  background: rgba(255, 255, 255, 0.14);
+}

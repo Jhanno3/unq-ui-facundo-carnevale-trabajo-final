@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { wordExists } from '../api/wordApi'
+import BackButton from '../components/BackButton'
+import UserMenu from '../components/UserMenu'
 import styles from './GameView.module.css'
 
 const MAX_WORD_SIZE = 1.6
@@ -28,7 +30,7 @@ function isAlreadyUsed(word, chain) {
   return chain.some((used) => used.toLowerCase() === word.toLowerCase())
 }
 
-function GameView() {
+function GameView({ onBack }) {
   const [chain, setChain] = useState([])
   const [inputValue, setInputValue] = useState('')
   const [invalidAttempt, setInvalidAttempt] = useState(null)
@@ -102,6 +104,9 @@ function GameView() {
 
   return (
     <div className={`${styles.game} ${shake ? styles.shake : ''}`}>
+      <BackButton onClick={onBack} />
+      <UserMenu />
+
       <header className={styles.header}>
         <span className={styles.score}>Puntaje: 0</span>
         <span className={styles.timer}>15s</span>
