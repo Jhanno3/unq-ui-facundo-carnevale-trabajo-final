@@ -1,10 +1,24 @@
-import styles from './App.module.css'
+import { useState } from 'react'
+import MenuView from './views/MenuView'
+import GameView from './views/GameView'
+import LeaderboardView from './views/LeaderboardView'
 
 function App() {
+  const [view, setView] = useState('menu')
+
+  if (view === 'game') {
+    return <GameView />
+  }
+
+  if (view === 'leaderboard') {
+    return <LeaderboardView onBack={() => setView('menu')} />
+  }
+
   return (
-    <div className={styles.app}>
-      <h1>Palabras Encadenadas</h1>
-    </div>
+    <MenuView
+      onStartGame={() => setView('game')}
+      onShowLeaderboard={() => setView('leaderboard')}
+    />
   )
 }
 

@@ -1,0 +1,194 @@
+.game {
+  position: relative;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.errorPopup {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: rgba(45, 12, 15, 0.94);
+  border: 1px solid var(--danger);
+  color: #ffb3b6;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  animation: pop-in 0.25s ease;
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -8px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+}
+
+.shake {
+  animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translateX(-1px);
+  }
+  20%,
+  80% {
+    transform: translateX(2px);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translateX(-4px);
+  }
+  40%,
+  60% {
+    transform: translateX(4px);
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  font-weight: 600;
+}
+
+.timer {
+  color: var(--accent);
+}
+
+.chain {
+  flex: 1;
+  overflow-y: auto;
+  list-style: none;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+.word {
+  padding: 6px 10px;
+  max-width: 80%;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  word-break: break-word;
+  transition: font-size 0.2s ease;
+}
+
+.lastLetter {
+  color: #b299ff;
+}
+
+.inputBar {
+  display: flex;
+  gap: 8px;
+  padding: 16px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.inputWrapper {
+  position: relative;
+  flex: 1;
+}
+
+.inputWrapper input {
+  width: 100%;
+  font-size: 16px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  color: inherit;
+}
+
+.inputWrapper input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.inputWrapper input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: -1px;
+}
+
+.inputTextHidden {
+  color: transparent;
+  caret-color: #f2f1fa;
+}
+
+.inputOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  border: 1px solid transparent;
+  font-size: 16px;
+  white-space: pre;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.invalidLetter {
+  color: var(--danger);
+}
+
+.invalidWord {
+  color: var(--danger);
+}
+
+.inputBar button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 88px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.inputBar button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

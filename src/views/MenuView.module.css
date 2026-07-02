@@ -1,0 +1,34 @@
+.menu {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 20px;
+  text-align: center;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 280px;
+}
+
+.options button {
+  font-size: 18px;
+  padding: 14px 24px;
+  border-radius: 8px;
+  border: 2px solid var(--accent);
+  background: var(--accent-bg);
+  color: var(--accent);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.options button:hover {
+  background: var(--accent);
+  color: #fff;
+}
