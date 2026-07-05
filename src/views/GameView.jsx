@@ -195,6 +195,7 @@ function GameView({ onBack, onShowLeaderboard }) {
             <p className={styles.gameOverReason}>
               {outOfLives ? 'Te quedaste sin vidas' : 'Se acabó el tiempo'}
             </p>
+            <p className={styles.wordCount}>Palabras encadenadas: {chain.length}</p>
             <p className={styles.finalScore}>Puntaje final: {calculateScore(chain)}</p>
             <div className={styles.gameOverActions}>
               <button type="button" onClick={onBack}>

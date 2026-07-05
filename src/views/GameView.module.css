@@ -70,6 +70,10 @@
   font-weight: 600;
 }
 
+.score {
+  justify-self: start;
+}
+
 .timer {
   justify-self: end;
   color: var(--accent);
@@ -118,6 +122,10 @@
 .gameOverReason {
   color: #ffb3b6;
   font-weight: 600;
+}
+
+.wordCount {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .finalScore {

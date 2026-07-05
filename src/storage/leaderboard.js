@@ -1,5 +1,5 @@
 const LEADERBOARD_KEY = 'palabras-encadenadas:leaderboard'
-const MAX_ENTRIES = 5
+const MAX_ENTRIES = 10
 
 export function getScores() {
   const raw = localStorage.getItem(LEADERBOARD_KEY)
